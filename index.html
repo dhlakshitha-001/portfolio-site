@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Morgan — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <!-- Remix Icons (social + UI icons) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-dot"></span>
+      <span class="loader-dot"></span>
+      <span class="loader-dot"></span>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">AM<span class="accent">.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero">
+    <!-- Decorative grid background -->
+    <div class="hero-grid-bg"></div>
+    <!-- Glow blob -->
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">👋 Hello, I'm</p>
+      <h1 class="hero-name reveal">Alex<br /><span class="hero-name-accent">Morgan</span></h1>
+      <div class="hero-title-row reveal">
+        <span class="hero-title-badge">Full-Stack Developer</span>
+        <span class="hero-title-sep">·</span>
+        <span class="hero-title-badge">Cloud Architect</span>
+        <span class="hero-title-sep">·</span>
+        <span class="hero-title-badge">Open Source Enthusiast</span>
+      </div>
+      <p class="hero-desc reveal">
+        I craft scalable web applications and cloud-native solutions — turning complex problems into elegant, user-centred experiences. Based in San Francisco, available worldwide.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">
+          View My Work <i class="ri-arrow-right-line"></i>
+        </a>
+        <a href="resume.pdf" download class="btn btn-ghost">
+          <i class="ri-download-2-line"></i> Download CV
+        </a>
+      </div>
+      <div class="hero-socials reveal">
+        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter/X"><i class="ri-twitter-x-fill"></i></a>
+        <a href="mailto:alex@example.com" aria-label="Email"><i class="ri-mail-fill"></i></a>
+      </div>
+    </div>
+
+    <!-- Hero image / avatar -->
+    <div class="hero-avatar-wrap reveal">
+      <div class="hero-avatar">
+        <img src="https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=AlexMorgan&backgroundColor=1a1a2e" alt="Alex Morgan avatar" />
+      </div>
+      <div class="hero-avatar-ring"></div>
+      <div class="hero-avatar-ring ring2"></div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <a href="#about" class="scroll-indicator">
+      <span class="scroll-label">Scroll</span>
+      <span class="scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">01 — About</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a <strong>Full-Stack Developer</strong> with 5+ years building production-grade web platforms, APIs, and cloud infrastructure. I hold certifications from <strong>Microsoft (AZ-900)</strong> and <strong>Cisco (CCNA)</strong>, and I'm passionate about DevOps culture and developer tooling.
+          </p>
+          <p>
+            When I'm not writing code, I'm contributing to open-source projects, mentoring junior developers, or exploring the intersection of design and engineering. I believe the best software is both technically sound <em>and</em> beautiful to use.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">30+</span>
+              <span class="stat-label">Projects Shipped</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">10+</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">4</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image-wrap reveal">
+          <div class="about-image">
+            <img src="https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=AlexFull&backgroundColor=1e1e2e" alt="About photo" />
+          </div>
+          <div class="about-image-accent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">02 — Skills</span>
+        <h2 class="section-title">What I Work With</h2>
+      </div>
+
+      <div class="skills-categories">
+
+        <!-- Frontend -->
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="ri-computer-line"></i> Frontend</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>React / Next.js</span><span class="skill-pct">92%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>TypeScript</span><span class="skill-pct">88%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>CSS / Tailwind</span><span class="skill-pct">95%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Vue.js</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="ri-server-line"></i> Backend</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>Node.js / Express</span><span class="skill-pct">90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Python / FastAPI</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>PostgreSQL / MongoDB</span><span class="skill-pct">82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>GraphQL</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud & DevOps -->
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="ri-cloud-line"></i> Cloud & DevOps</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>Azure</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Docker / Kubernetes</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>CI/CD (GitHub Actions)</span><span class="skill-pct">88%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Linux / Networking</span><span class="skill-pct">83%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="83"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tech icon cloud -->
+      <div class="tech-tags reveal">
+        <span class="tag">Git</span><span class="tag">AWS</span><span class="tag">Redis</span>
+        <span class="tag">Jest</span><span class="tag">Figma</span><span class="tag">Terraform</span>
+        <span class="tag">REST APIs</span><span class="tag">WebSockets</span><span class="tag">Nginx</span>
+        <span class="tag">Prisma</span><span class="tag">Vercel</span><span class="tag">Supabase</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">03 — Projects</span>
+        <h2 class="section-title">Selected Work</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card reveal">
+          <div class="project-img">
+            <div class="project-img-placeholder" style="--hue:220">
+              <i class="ri-shopping-bag-line"></i>
+            </div>
+            <div class="project-links">
+              <a href="#" aria-label="Live demo" class="project-link"><i class="ri-external-link-line"></i></a>
+              <a href="#" aria-label="GitHub repo" class="project-link"><i class="ri-github-fill"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-num">01</span>
+            <h3 class="project-title">ShopFlow — E-commerce Platform</h3>
+            <p class="project-desc">A high-performance multi-vendor marketplace with real-time inventory, Stripe payments, and a custom recommendation engine. Handles 10k+ concurrent users.</p>
+            <div class="project-stack">
+              <span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>Redis</span><span>Stripe</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal">
+          <div class="project-img">
+            <div class="project-img-placeholder" style="--hue:150">
+              <i class="ri-bar-chart-box-line"></i>
+            </div>
+            <div class="project-links">
+              <a href="#" aria-label="Live demo" class="project-link"><i class="ri-external-link-line"></i></a>
+              <a href="#" aria-label="GitHub repo" class="project-link"><i class="ri-github-fill"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-num">02</span>
+            <h3 class="project-title">DataPulse — Analytics Dashboard</h3>
+            <p class="project-desc">Interactive business intelligence dashboard with real-time WebSocket feeds, D3.js visualisations, and role-based access control for enterprise teams.</p>
+            <div class="project-stack">
+              <span>React</span><span>FastAPI</span><span>D3.js</span><span>WebSockets</span><span>Azure</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card reveal">
+          <div class="project-img">
+            <div class="project-img-placeholder" style="--hue:280">
+              <i class="ri-robot-2-line"></i>
+            </div>
+            <div class="project-links">
+              <a href="#" aria-label="Live demo" class="project-link"><i class="ri-external-link-line"></i></a>
+              <a href="#" aria-label="GitHub repo" class="project-link"><i class="ri-github-fill"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-num">03</span>
+            <h3 class="project-title">AskDocs — AI Document Assistant</h3>
+            <p class="project-desc">RAG-powered document Q&A tool that lets teams chat with their internal knowledge base. Integrates OpenAI + Pinecone with a beautiful chat interface.</p>
+            <div class="project-stack">
+              <span>TypeScript</span><span>OpenAI</span><span>Pinecone</span><span>Next.js</span><span>Tailwind</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card reveal">
+          <div class="project-img">
+            <div class="project-img-placeholder" style="--hue:40">
+              <i class="ri-shield-check-line"></i>
+            </div>
+            <div class="project-links">
+              <a href="#" aria-label="Live demo" class="project-link"><i class="ri-external-link-line"></i></a>
+              <a href="#" aria-label="GitHub repo" class="project-link"><i class="ri-github-fill"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-num">04</span>
+            <h3 class="project-title">VaultOps — Secrets Manager CLI</h3>
+            <p class="project-desc">Open-source CLI tool for managing environment secrets across dev/staging/prod. Supports Azure Key Vault and AWS Secrets Manager. 1.2k GitHub stars.</p>
+            <div class="project-stack">
+              <span>Python</span><span>Azure Key Vault</span><span>AWS</span><span>Click</span><span>Docker</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="projects-more reveal">
+        <a href="https://github.com" target="_blank" class="btn btn-ghost">
+          <i class="ri-github-fill"></i> See More on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACHIEVEMENTS / CERTIFICATIONS SECTION ===== -->
+  <section id="achievements">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">04 — Achievements</span>
+        <h2 class="section-title">Certifications & Awards</h2>
+      </div>
+
+      <div class="certs-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-icon" style="--cert-color:#0078d4">
+            <i class="ri-microsoft-fill"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">Microsoft</span>
+            <h3 class="cert-title">Azure Fundamentals</h3>
+            <span class="cert-code">AZ-900</span>
+            <p class="cert-date"><i class="ri-calendar-line"></i> Issued Jan 2024</p>
+            <a href="#" class="cert-verify">Verify <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon" style="--cert-color:#1ba0d7">
+            <i class="ri-router-line"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">Cisco</span>
+            <h3 class="cert-title">Networking Fundamentals</h3>
+            <span class="cert-code">CCNA</span>
+            <p class="cert-date"><i class="ri-calendar-line"></i> Issued Mar 2023</p>
+            <a href="#" class="cert-verify">Verify <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon" style="--cert-color:#ff9900">
+            <i class="ri-amazon-fill"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">Amazon Web Services</span>
+            <h3 class="cert-title">AWS Cloud Practitioner</h3>
+            <span class="cert-code">CLF-C02</span>
+            <p class="cert-date"><i class="ri-calendar-line"></i> Issued Aug 2023</p>
+            <a href="#" class="cert-verify">Verify <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon" style="--cert-color:#6f42c1">
+            <i class="ri-code-box-line"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">freeCodeCamp</span>
+            <h3 class="cert-title">Full Stack Development</h3>
+            <span class="cert-code">FCC-FSD</span>
+            <p class="cert-date"><i class="ri-calendar-line"></i> Issued Jun 2022</p>
+            <a href="#" class="cert-verify">Verify <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+        <!-- Award card -->
+        <div class="cert-card award-card reveal">
+          <div class="cert-icon" style="--cert-color:#f59e0b">
+            <i class="ri-trophy-line"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">HackSF 2023</span>
+            <h3 class="cert-title">1st Place — Best Dev Tool</h3>
+            <span class="cert-code">AWARD</span>
+            <p class="cert-date"><i class="ri-calendar-line"></i> October 2023</p>
+            <a href="#" class="cert-verify">Details <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+        <div class="cert-card award-card reveal">
+          <div class="cert-icon" style="--cert-color:#10b981">
+            <i class="ri-open-source-fill"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">GitHub</span>
+            <h3 class="cert-title">Open Source Contributor</h3>
+            <span class="cert-code">1.2k ⭐</span>
+            <p class="cert-date"><i class="ri-calendar-line"></i> 2022 – Present</p>
+            <a href="#" class="cert-verify">View <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">05 — Contact</span>
+        <h2 class="section-title">Let's Work Together</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-intro">
+            Have a project in mind, a role to fill, or just want to talk tech? My inbox is always open. I'll get back to you within 24 hours.
+          </p>
+          <ul class="contact-details">
+            <li>
+              <span class="contact-icon"><i class="ri-mail-line"></i></span>
+              <a href="mailto:alex@example.com">alex@example.com</a>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="ri-map-pin-line"></i></span>
+              <span>San Francisco, CA (Remote OK)</span>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="ri-time-line"></i></span>
+              <span>Available: Mon–Fri, 9am–6pm PST</span>
+            </li>
+          </ul>
+          <div class="contact-socials">
+            <a href="https://github.com" target="_blank"><i class="ri-github-fill"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="ri-twitter-x-fill"></i></a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+              <span class="field-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+              <span class="field-error" id="emailError"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project inquiry / Freelance / etc." />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, timeline, and budget..." required></textarea>
+            <span class="field-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">
+            Send Message <i class="ri-send-plane-line"></i>
+          </button>
+          <div class="form-success" id="formSuccess">
+            <i class="ri-checkbox-circle-line"></i> Message sent! I'll be in touch soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2025 Alex Morgan. Built with ❤️ and ☕</p>
+      <a href="#hero" class="footer-back">
+        Back to top <i class="ri-arrow-up-line"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
