@@ -1,5 +1,5 @@
 /* ============================================================
-   SCRIPT.JS — Alex Morgan Portfolio
+   SCRIPT.JS — D H Lakshitha Portfolio
    Features: Loader · Navbar · Scroll reveal · Skill bars ·
              Active nav highlight · Mobile menu · Form validation
    ============================================================ */
@@ -25,10 +25,19 @@
 
 
 /* ─── 2. NAVBAR — scroll + mobile toggle ────────────────────── */
-const navbar    = document.getElementById('navbar');
-const navToggle = document.getElementById('navToggle');
-const navLinks  = document.getElementById('navLinks');
+const navbar     = document.getElementById('navbar');
+const navToggle  = document.getElementById('navToggle');
+const navLinks   = document.getElementById('navLinks');
+const navOverlay = document.getElementById('navOverlay');
 const navLinkEls = document.querySelectorAll('.nav-link');
+
+// Helper: close the mobile drawer
+function closeMenu() {
+  navToggle.classList.remove('open');
+  navLinks.classList.remove('open');
+  if (navOverlay) navOverlay.classList.remove('show');
+  document.body.style.overflow = '';
+}
 
 // Scroll: add .scrolled class after 60px
 function handleNavbarScroll() {
@@ -39,33 +48,32 @@ function handleNavbarScroll() {
   }
 }
 
-// Mobile: toggle open class on hamburger + links panel
+// Mobile: toggle open class on hamburger + links panel + overlay
 navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('open');
-  navLinks.classList.toggle('open');
-  // Prevent body scroll when menu is open
-  document.body.style.overflow =
-    navLinks.classList.contains('open') ? 'hidden' : '';
+  const isOpen = navLinks.classList.toggle('open');
+  navToggle.classList.toggle('open', isOpen);
+  if (navOverlay) navOverlay.classList.toggle('show', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
-// Close mobile menu when a nav link is clicked
-navLinkEls.forEach(link => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('open');
-    navLinks.classList.remove('open');
-    document.body.style.overflow = '';
-  });
-});
+// Close when a nav link is clicked
+navLinkEls.forEach(link => link.addEventListener('click', closeMenu));
 
-// Close on outside click
+// Close on overlay click
+if (navOverlay) navOverlay.addEventListener('click', closeMenu);
+
+// Close on outside click (keyboard / pointer)
 document.addEventListener('click', e => {
   if (navLinks.classList.contains('open') &&
       !navLinks.contains(e.target) &&
       !navToggle.contains(e.target)) {
-    navToggle.classList.remove('open');
-    navLinks.classList.remove('open');
-    document.body.style.overflow = '';
+    closeMenu();
   }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMenu();
 });
 
 
