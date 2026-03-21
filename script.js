@@ -11,7 +11,7 @@
 
   // Hide loader once page is ready (min 800ms for effect)
   const minDuration = new Promise(res => setTimeout(res, 800));
-  const pageReady   = new Promise(res => {
+  const pageReady = new Promise(res => {
     if (document.readyState === 'complete') res();
     else window.addEventListener('load', res, { once: true });
   });
@@ -25,9 +25,9 @@
 
 
 /* ─── 2. NAVBAR — scroll + mobile toggle ────────────────────── */
-const navbar     = document.getElementById('navbar');
-const navToggle  = document.getElementById('navToggle');
-const navLinks   = document.getElementById('navLinks');
+const navbar = document.getElementById('navbar');
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
 const navOverlay = document.getElementById('navOverlay');
 const navLinkEls = document.querySelectorAll('.nav-link');
 
@@ -65,8 +65,8 @@ if (navOverlay) navOverlay.addEventListener('click', closeMenu);
 // Close on outside click (keyboard / pointer)
 document.addEventListener('click', e => {
   if (navLinks.classList.contains('open') &&
-      !navLinks.contains(e.target) &&
-      !navToggle.contains(e.target)) {
+    !navLinks.contains(e.target) &&
+    !navToggle.contains(e.target)) {
     closeMenu();
   }
 });
@@ -84,10 +84,10 @@ function highlightNav() {
   const scrollPos = window.scrollY + 120; // offset for sticky nav
 
   sections.forEach(section => {
-    const top    = section.offsetTop;
+    const top = section.offsetTop;
     const bottom = top + section.offsetHeight;
-    const id     = section.getAttribute('id');
-    const link   = document.querySelector(`.nav-link[href="#${id}"]`);
+    const id = section.getAttribute('id');
+    const link = document.querySelector(`.nav-link[href="#${id}"]`);
 
     if (link) {
       if (scrollPos >= top && scrollPos < bottom) {
@@ -98,6 +98,30 @@ function highlightNav() {
   });
 }
 
+
+/* ─── 3.5. HERO PARALLAX & GLOW TRACKING ──────────────────────── */
+const heroSection = document.getElementById('hero');
+if (heroSection) {
+  let targetX = 0, targetY = 0;
+  let currentX = 0, currentY = 0;
+
+  heroSection.addEventListener('mousemove', (e) => {
+    const rect = heroSection.getBoundingClientRect();
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    targetX = (e.clientX - rect.left - centerX) * 0.45;
+    targetY = (e.clientY - rect.top - centerY) * 0.45;
+  });
+
+  function animateHeroGlow() {
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+    heroSection.style.setProperty('--mouse-x', `${currentX}px`);
+    heroSection.style.setProperty('--mouse-y', `${currentY}px`);
+    requestAnimationFrame(animateHeroGlow);
+  }
+  animateHeroGlow();
+}
 
 /* ─── 4. SCROLL REVEAL (IntersectionObserver) ───────────────── */
 const revealEls = document.querySelectorAll('.reveal');
@@ -133,7 +157,7 @@ const skillObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const target = entry.target;
-      const width  = target.dataset.width || '0';
+      const width = target.dataset.width || '0';
       // Small delay so reveal animation finishes first
       setTimeout(() => {
         target.style.width = width + '%';
@@ -170,22 +194,22 @@ if (contactForm) {
     }
 
     // Validate Name
-    const name  = document.getElementById('name').value.trim();
+    const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
-    const msg   = document.getElementById('message').value.trim();
+    const msg = document.getElementById('message').value.trim();
 
     setError('name', 'nameError',
       !name ? 'Please enter your name.' :
-      name.length < 2 ? 'Name must be at least 2 characters.' : '');
+        name.length < 2 ? 'Name must be at least 2 characters.' : '');
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setError('email', 'emailError',
       !email ? 'Please enter your email.' :
-      !emailRegex.test(email) ? 'Please enter a valid email address.' : '');
+        !emailRegex.test(email) ? 'Please enter a valid email address.' : '');
 
     setError('message', 'messageError',
       !msg ? 'Please enter your message.' :
-      msg.length < 10 ? 'Message must be at least 10 characters.' : '');
+        msg.length < 10 ? 'Message must be at least 10 characters.' : '');
 
     if (!valid) return;
 
@@ -205,8 +229,8 @@ if (contactForm) {
   });
 
   // Live clear errors
-  ['name','email','message'].forEach(id => {
-    const el    = document.getElementById(id);
+  ['name', 'email', 'message'].forEach(id => {
+    const el = document.getElementById(id);
     const errId = id + 'Error';
     if (el) {
       el.addEventListener('input', () => {
@@ -254,7 +278,107 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (!target) return;
     e.preventDefault();
     const offset = navbar.offsetHeight + 8;
-    const top    = target.getBoundingClientRect().top + window.scrollY - offset;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
+
+
+/* ─── 10. ABOUT CANVAS — particle network ───────────────────── */
+(function initAboutCanvas() {
+  const canvas = document.getElementById('aboutCanvas');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes = [], raf;
+  const COUNT = 55;
+  const MAX_DIST = 110;
+  const BLUE = '59,130,246';
+
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function makeNode() {
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.45,
+      vy: (Math.random() - 0.5) * 0.45,
+      r: Math.random() * 2 + 1.2,
+    };
+  }
+
+  function init() {
+    resize();
+    nodes = Array.from({ length: COUNT }, makeNode);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Move
+    nodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+    });
+
+    // Connections
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MAX_DIST) {
+          const alpha = (1 - dist / MAX_DIST) * 0.35;
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(${BLUE},${alpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Dots
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${BLUE},0.65)`;
+      ctx.fill();
+    });
+
+    raf = requestAnimationFrame(draw);
+  }
+
+  // Only run when section is visible
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { init(); draw(); }
+      else { cancelAnimationFrame(raf); }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(canvas.closest('#about'));
+  window.addEventListener('resize', () => { resize(); });
+})();
+
+/* ─── 11. REVEAL-RIGHT OBSERVER ─────────────────────────────── */
+const revealRightEls = document.querySelectorAll('.reveal-right');
+const revealRightObs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      const siblings = [...entry.target.parentElement.children]
+        .filter(el => el.classList.contains('reveal-right'));
+      const idx = siblings.indexOf(entry.target);
+      entry.target.style.transitionDelay = `${idx * 0.12}s`;
+      entry.target.classList.add('visible');
+      revealRightObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+revealRightEls.forEach(el => revealRightObs.observe(el));
