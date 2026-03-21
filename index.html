@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,10 +9,13 @@
   <!-- Google Fonts: Syne (display) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <!-- Remix Icons (social + UI icons) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet" />
+  <!-- Remix Icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
+
 <body>
 
   <!-- ===== LOADING SCREEN ===== -->
@@ -35,6 +39,7 @@
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#feedback" class="nav-link">Feedback</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
         <li><a href="#contact" class="nav-cta">Hire Me</a></li>
       </ul>
@@ -45,11 +50,11 @@
 
   <!-- ===== HERO SECTION ===== -->
   <section id="hero">
-    <!-- Decorative grid background -->
     <div class="hero-grid-bg"></div>
-    <!-- Glow blob -->
     <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
 
+    <!-- Left: text content -->
     <div class="hero-content">
       <p class="hero-eyebrow reveal">👋 Hello, I'm</p>
       <h1 class="hero-name reveal">D H<br /><span class="hero-name-accent">Lakshitha</span></h1>
@@ -61,7 +66,8 @@
         <span class="hero-title-badge">DevOps Enthusiast</span>
       </div>
       <p class="hero-desc reveal">
-        I craft scalable web applications and cloud-native solutions — turning complex problems into elegant, user-centred experiences. Based in San Francisco, available worldwide.
+        I craft scalable web applications and cloud-native solutions — turning complex problems into elegant,
+        user-centred experiences. Based in Sri Lanka, available worldwide.
       </p>
       <div class="hero-actions reveal">
         <a href="#projects" class="btn btn-primary">
@@ -72,20 +78,70 @@
         </a>
       </div>
       <div class="hero-socials reveal">
-        <a href="https://github.com/dhlakshitha-001" target="_blank" aria-label="GitHub"><i class="ri-github-fill"></i></a>
-        <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        <a href="https://github.com/dhlakshitha-001" target="_blank" aria-label="GitHub"><i
+            class="ri-github-fill"></i></a>
+        <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank" aria-label="LinkedIn"><i
+            class="ri-linkedin-fill"></i></a>
         <a href="https://twitter.com" target="_blank" aria-label="Twitter/X"><i class="ri-twitter-x-fill"></i></a>
         <a href="mailto:dhlakshitha@outlook.com" aria-label="Email"><i class="ri-mail-fill"></i></a>
       </div>
     </div>
 
-    <!-- Hero image / avatar -->
-    <div class="hero-avatar-wrap reveal">
-      <div class="hero-avatar">
-        <img src="assets/profile.png" alt="D H Lakshitha avatar" />
+    <!-- Right: animated tech visual (replaces avatar) -->
+    <div class="hero-visual reveal" aria-hidden="true">
+
+      <!-- SVG orbit rings + animated dots -->
+      <svg class="orbit-svg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+        <circle class="orbit orbit-a" cx="240" cy="240" r="100" />
+        <circle class="orbit orbit-b" cx="240" cy="240" r="160" />
+        <circle class="orbit orbit-c" cx="240" cy="240" r="215" />
+        <!-- Dots travel along each orbit via animateMotion -->
+        <circle class="orbit-dot" r="5" fill="#3b82f6">
+          <animateMotion dur="6s" repeatCount="indefinite">
+            <mpath href="#path-a" />
+          </animateMotion>
+        </circle>
+        <circle class="orbit-dot" r="4" fill="#60a5fa">
+          <animateMotion dur="10s" repeatCount="indefinite" begin="-3s">
+            <mpath href="#path-b" />
+          </animateMotion>
+        </circle>
+        <circle class="orbit-dot" r="3.5" fill="#93c5fd">
+          <animateMotion dur="15s" repeatCount="indefinite" begin="-7s">
+            <mpath href="#path-c" />
+          </animateMotion>
+        </circle>
+        <!-- Hidden paths for animateMotion -->
+        <path id="path-a" d="M340,240 a100,100 0 1,1 -0.01,0" fill="none" />
+        <path id="path-b" d="M400,240 a160,160 0 1,1 -0.01,0" fill="none" />
+        <path id="path-c" d="M455,240 a215,215 0 1,1 -0.01,0" fill="none" />
+      </svg>
+
+      <!-- Central glowing core -->
+      <div class="hero-core">
+        <div class="core-pulse"></div>
+        <div class="core-pulse pulse-2"></div>
+        <div class="core-inner">
+          <i class="ri-code-box-fill"></i>
+        </div>
       </div>
-      <div class="hero-avatar-ring"></div>
-      <div class="hero-avatar-ring ring2"></div>
+
+      <!-- Floating tech orbs (orbit around core) -->
+      <div class="tech-orb orb-1"><i class="ri-cloud-line"></i><span>Azure</span></div>
+      <div class="tech-orb orb-2"><i class="ri-terminal-box-line"></i><span>DevOps</span></div>
+      <div class="tech-orb orb-3"><i class="ri-server-line"></i><span>Node.js</span></div>
+      <div class="tech-orb orb-4"><i class="ri-git-branch-line"></i><span>Git</span></div>
+      <div class="tech-orb orb-5"><i class="ri-docker-line"></i><span>Docker</span></div>
+      <div class="tech-orb orb-6"><i class="ri-code-s-slash-line"></i><span>React</span></div>
+
+      <!-- Horizontal scan line -->
+      <div class="hero-scanline"></div>
+
+      <!-- Corner HUD brackets -->
+      <span class="bracket br-tl"></span>
+      <span class="bracket br-tr"></span>
+      <span class="bracket br-bl"></span>
+      <span class="bracket br-br"></span>
     </div>
 
     <!-- Scroll indicator -->
@@ -99,24 +155,75 @@
   <section id="about">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">01 — About</span>
+        <span class="section-tag"> About</span>
         <h2 class="section-title">Who I Am</h2>
       </div>
+
+      <!-- about-grid: animated visual LEFT, text+stats RIGHT -->
       <div class="about-grid">
-        <div class="about-text reveal">
-          <p>
-            I'm a <strong>Full-Stack Developer</strong> with 5+ years building production-grade web platforms, APIs, and cloud infrastructure. I hold certifications from <strong>Microsoft (AZ-900)</strong> and <strong>Cisco (CCNA)</strong>, and I'm passionate about DevOps culture and developer tooling.
-          </p>
-          <p>
-            When I'm not writing code, I'm contributing to open-source projects, mentoring junior developers, or exploring the intersection of design and engineering. I believe the best software is both technically sound <em>and</em> beautiful to use.
-          </p>
-          <div class="about-stats">
+
+        <!-- LEFT: animated tech visual -->
+        <div class="about-visual reveal" aria-hidden="true">
+          <canvas class="about-canvas" id="aboutCanvas"></canvas>
+
+          <!-- Floating code snippet cards -->
+          <div class="code-card cc-1">
+            <div class="cc-bar"><span class="cc-dot red"></span><span class="cc-dot yellow"></span><span
+                class="cc-dot green"></span></div>
+            <pre><code><em>const</em> deploy = <em>async</em> () =&gt; &#123;
+  <em>await</em> docker.build();
+  <em>await</em> azure.push();
+  <b>// live &#10003;</b>
+&#125;;</code></pre>
+          </div>
+
+          <div class="code-card cc-2">
+            <div class="cc-bar"><span class="cc-dot red"></span><span class="cc-dot yellow"></span><span
+                class="cc-dot green"></span></div>
+            <pre><code><b># CI pipeline</b>
+<em>build</em>:  &#10003; passed
+<em>test</em>:   &#10003; passed
+<em>deploy</em>: &#10003; live</code></pre>
+          </div>
+
+          <!-- Badge pills -->
+          <div class="about-badge badge-1"><i class="ri-cloud-check-line"></i> AZ-900 Certified</div>
+          <div class="about-badge badge-2"><i class="ri-shield-check-line"></i> AZ-104 Certified</div>
+          <div class="about-badge badge-3"><i class="ri-git-commit-line"></i> 500+ Commits</div>
+          <div class="about-badge badge-4"><i class="ri-terminal-line"></i> DevOps Expert</div>
+
+          <!-- Ambient glow orbs -->
+          <div class="about-glow-orb orb-a"></div>
+          <div class="about-glow-orb orb-b"></div>
+
+          <!-- HUD corners -->
+          <span class="bracket br-tl"></span>
+          <span class="bracket br-tr"></span>
+          <span class="bracket br-bl"></span>
+          <span class="bracket br-br"></span>
+        </div>
+
+        <!-- RIGHT: text + stats -->
+        <div class="about-right">
+          <div class="about-text reveal-right">
+            <p>
+              I'm a <strong>Full-Stack Developer</strong> with 5+ years building production-grade web platforms, APIs,
+              and cloud infrastructure. I hold certifications from <strong>Microsoft (AZ-900)</strong> and <strong>Cisco
+                (CCNA)</strong>, and I'm passionate about DevOps culture and developer tooling.
+            </p>
+            <p>
+              When I'm not writing code, I'm contributing to open-source projects, mentoring junior developers, or
+              exploring the intersection of design and engineering. I believe the best software is both technically
+              sound <em>and</em> beautiful to use.
+            </p>
+          </div>
+          <div class="about-stats reveal-right">
             <div class="stat">
               <span class="stat-num">1+</span>
               <span class="stat-label">Years Experience</span>
             </div>
             <div class="stat">
-              <span class="stat-num">5+</span>
+              <span class="stat-num">30+</span>
               <span class="stat-label">Projects Shipped</span>
             </div>
             <div class="stat">
@@ -129,12 +236,7 @@
             </div>
           </div>
         </div>
-        <div class="about-image-wrap reveal">
-          <div class="about-image">
-            <img src="https://api.dicebear.com/8.x/lorelei-neutral/svg?seed=AlexFull&backgroundColor=1e1e2e" alt="D H Lakshitha" />
-          </div>
-          <div class="about-image-accent"></div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -146,7 +248,6 @@
         <span class="section-tag">02 — Skills</span>
         <h2 class="section-title">What I Work With</h2>
       </div>
-
       <div class="skills-categories">
 
         <!-- Frontend -->
@@ -154,20 +255,28 @@
           <h3 class="skill-cat-title"><i class="ri-computer-line"></i> Frontend</h3>
           <div class="skill-list">
             <div class="skill-item">
-              <div class="skill-info"><span>N/A</span><span class="skill-pct">00%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="00"></div></div>
+              <div class="skill-info"><span>React / Next.js</span><span class="skill-pct">92%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="92"></div>
+              </div>
             </div>
             <div class="skill-item">
-              <div class="skill-info"><span>N/A</span><span class="skill-pct">00%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="00"></div></div>
+              <div class="skill-info"><span>TypeScript</span><span class="skill-pct">88%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="88"></div>
+              </div>
             </div>
             <div class="skill-item">
-              <div class="skill-info"><span>N/A</span><span class="skill-pct">00%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="00"></div></div>
+              <div class="skill-info"><span>CSS / Tailwind</span><span class="skill-pct">95%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="95"></div>
+              </div>
             </div>
             <div class="skill-item">
-              <div class="skill-info"><span>N/A</span><span class="skill-pct">00%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="00"></div></div>
+              <div class="skill-info"><span>Vue.js</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="75"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -177,20 +286,28 @@
           <h3 class="skill-cat-title"><i class="ri-server-line"></i> Backend</h3>
           <div class="skill-list">
             <div class="skill-item">
-              <div class="skill-info"><span>N/A</span><span class="skill-pct">00%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="00"></div></div>
+              <div class="skill-info"><span>Node.js / Express</span><span class="skill-pct">90%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="90"></div>
+              </div>
             </div>
             <div class="skill-item">
-              <div class="skill-info"><span>N/A</span><span class="skill-pct">00%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="00"></div></div>
+              <div class="skill-info"><span>Python / FastAPI</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
             </div>
             <div class="skill-item">
-              <div class="skill-info"><span>N/A</span><span class="skill-pct">00%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="00"></div></div>
+              <div class="skill-info"><span>PostgreSQL / MongoDB</span><span class="skill-pct">82%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="82"></div>
+              </div>
             </div>
             <div class="skill-item">
-              <div class="skill-info"><span>N/A</span><span class="skill-pct">00%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="00"></div></div>
+              <div class="skill-info"><span>GraphQL</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="78"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -201,33 +318,40 @@
           <div class="skill-list">
             <div class="skill-item">
               <div class="skill-info"><span>Azure</span><span class="skill-pct">85%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
             </div>
             <div class="skill-item">
               <div class="skill-info"><span>Docker / Kubernetes</span><span class="skill-pct">80%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
             </div>
             <div class="skill-item">
               <div class="skill-info"><span>CI/CD (GitHub Actions)</span><span class="skill-pct">88%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="88"></div>
+              </div>
             </div>
             <div class="skill-item">
               <div class="skill-info"><span>Linux / Networking</span><span class="skill-pct">83%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="83"></div></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="83"></div>
+              </div>
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Tech icon cloud -->
+      <!-- Tech tag cloud -->
       <div class="tech-tags reveal">
-        <span class="tag">Git</span><span class="tag">AWS</span><span class="tag">Linux</span>
-        <span class="tag">Azure</span><span class="tag">O365</span><span class="tag">Jenkins</span>
-        <span class="tag">IoT</span><span class="tag">Docker</span><span class="tag">Nginx</span>
-        <span class="tag">Networking</span><span class="tag">Cybersecurity</span><span class="tag">Kubernetes</span>
+        <span class="tag">Git</span><span class="tag">AWS</span><span class="tag">Redis</span>
+        <span class="tag">Jest</span><span class="tag">Figma</span><span class="tag">Terraform</span>
+        <span class="tag">REST APIs</span><span class="tag">WebSockets</span><span class="tag">Nginx</span>
+        <span class="tag">Prisma</span><span class="tag">Vercel</span><span class="tag">Supabase</span>
       </div>
-
     </div>
   </section>
 
@@ -238,10 +362,8 @@
         <span class="section-tag">03 — Projects</span>
         <h2 class="section-title">Selected Work</h2>
       </div>
-
       <div class="projects-grid">
 
-        <!-- Project 1 -->
         <article class="project-card reveal">
           <div class="project-img">
             <div class="project-img-placeholder" style="--hue:220">
@@ -255,14 +377,14 @@
           <div class="project-body">
             <span class="project-num">01</span>
             <h3 class="project-title">ShopFlow — E-commerce Platform</h3>
-            <p class="project-desc">A high-performance multi-vendor marketplace with real-time inventory, Stripe payments, and a custom recommendation engine. Handles 10k+ concurrent users.</p>
+            <p class="project-desc">A high-performance multi-vendor marketplace with real-time inventory, Stripe
+              payments, and a custom recommendation engine. Handles 10k+ concurrent users.</p>
             <div class="project-stack">
               <span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>Redis</span><span>Stripe</span>
             </div>
           </div>
         </article>
 
-        <!-- Project 2 -->
         <article class="project-card reveal">
           <div class="project-img">
             <div class="project-img-placeholder" style="--hue:150">
@@ -276,14 +398,14 @@
           <div class="project-body">
             <span class="project-num">02</span>
             <h3 class="project-title">DataPulse — Analytics Dashboard</h3>
-            <p class="project-desc">Interactive business intelligence dashboard with real-time WebSocket feeds, D3.js visualisations, and role-based access control for enterprise teams.</p>
+            <p class="project-desc">Interactive business intelligence dashboard with real-time WebSocket feeds, D3.js
+              visualisations, and role-based access control for enterprise teams.</p>
             <div class="project-stack">
               <span>React</span><span>FastAPI</span><span>D3.js</span><span>WebSockets</span><span>Azure</span>
             </div>
           </div>
         </article>
 
-        <!-- Project 3 -->
         <article class="project-card reveal">
           <div class="project-img">
             <div class="project-img-placeholder" style="--hue:280">
@@ -297,14 +419,14 @@
           <div class="project-body">
             <span class="project-num">03</span>
             <h3 class="project-title">AskDocs — AI Document Assistant</h3>
-            <p class="project-desc">RAG-powered document Q&A tool that lets teams chat with their internal knowledge base. Integrates OpenAI + Pinecone with a beautiful chat interface.</p>
+            <p class="project-desc">RAG-powered document Q&A tool that lets teams chat with their internal knowledge
+              base. Integrates OpenAI + Pinecone with a beautiful chat interface.</p>
             <div class="project-stack">
               <span>TypeScript</span><span>OpenAI</span><span>Pinecone</span><span>Next.js</span><span>Tailwind</span>
             </div>
           </div>
         </article>
 
-        <!-- Project 4 -->
         <article class="project-card reveal">
           <div class="project-img">
             <div class="project-img-placeholder" style="--hue:40">
@@ -318,7 +440,8 @@
           <div class="project-body">
             <span class="project-num">04</span>
             <h3 class="project-title">VaultOps — Secrets Manager CLI</h3>
-            <p class="project-desc">Open-source CLI tool for managing environment secrets across dev/staging/prod. Supports Azure Key Vault and AWS Secrets Manager. 1.2k GitHub stars.</p>
+            <p class="project-desc">Open-source CLI tool for managing environment secrets across dev/staging/prod.
+              Supports Azure Key Vault and AWS Secrets Manager. 1.2k GitHub stars.</p>
             <div class="project-stack">
               <span>Python</span><span>Azure Key Vault</span><span>AWS</span><span>Click</span><span>Docker</span>
             </div>
@@ -326,7 +449,6 @@
         </article>
 
       </div>
-
       <div class="projects-more reveal">
         <a href="https://github.com/dhlakshitha-001" target="_blank" class="btn btn-ghost">
           <i class="ri-github-fill"></i> See More on GitHub
@@ -335,20 +457,17 @@
     </div>
   </section>
 
-  <!-- ===== ACHIEVEMENTS / CERTIFICATIONS SECTION ===== -->
+  <!-- ===== ACHIEVEMENTS / CERTIFICATIONS ===== -->
   <section id="achievements">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">04 — Achievements</span>
-        <h2 class="section-title">Certifications & Awards</h2>
+        <h2 class="section-title">Certifications &amp; Awards</h2>
       </div>
-
       <div class="certs-grid">
 
         <div class="cert-card reveal">
-          <div class="cert-icon" style="--cert-color:#0078d4">
-            <i class="ri-microsoft-fill"></i>
-          </div>
+          <div class="cert-icon" style="--cert-color:#0078d4"><i class="ri-microsoft-fill"></i></div>
           <div class="cert-body">
             <span class="cert-issuer">Microsoft</span>
             <h3 class="cert-title">Azure Fundamentals</h3>
@@ -359,9 +478,7 @@
         </div>
 
         <div class="cert-card reveal">
-          <div class="cert-icon" style="--cert-color:#1ba0d7">
-            <i class="ri-router-line"></i>
-          </div>
+          <div class="cert-icon" style="--cert-color:#1ba0d7"><i class="ri-router-line"></i></div>
           <div class="cert-body">
             <span class="cert-issuer">Cisco</span>
             <h3 class="cert-title">Networking Fundamentals</h3>
@@ -372,9 +489,7 @@
         </div>
 
         <div class="cert-card reveal">
-          <div class="cert-icon" style="--cert-color:#ff9900">
-            <i class="ri-amazon-fill"></i>
-          </div>
+          <div class="cert-icon" style="--cert-color:#ff9900"><i class="ri-amazon-fill"></i></div>
           <div class="cert-body">
             <span class="cert-issuer">Amazon Web Services</span>
             <h3 class="cert-title">AWS Cloud Practitioner</h3>
@@ -385,9 +500,7 @@
         </div>
 
         <div class="cert-card reveal">
-          <div class="cert-icon" style="--cert-color:#6f42c1">
-            <i class="ri-code-box-line"></i>
-          </div>
+          <div class="cert-icon" style="--cert-color:#6f42c1"><i class="ri-code-box-line"></i></div>
           <div class="cert-body">
             <span class="cert-issuer">freeCodeCamp</span>
             <h3 class="cert-title">Full Stack Development</h3>
@@ -397,11 +510,8 @@
           </div>
         </div>
 
-        <!-- Award card -->
         <div class="cert-card award-card reveal">
-          <div class="cert-icon" style="--cert-color:#f59e0b">
-            <i class="ri-trophy-line"></i>
-          </div>
+          <div class="cert-icon" style="--cert-color:#f59e0b"><i class="ri-trophy-line"></i></div>
           <div class="cert-body">
             <span class="cert-issuer">HackSF 2023</span>
             <h3 class="cert-title">1st Place — Best Dev Tool</h3>
@@ -412,9 +522,7 @@
         </div>
 
         <div class="cert-card award-card reveal">
-          <div class="cert-icon" style="--cert-color:#10b981">
-            <i class="ri-open-source-fill"></i>
-          </div>
+          <div class="cert-icon" style="--cert-color:#10b981"><i class="ri-open-source-fill"></i></div>
           <div class="cert-body">
             <span class="cert-issuer">GitHub</span>
             <h3 class="cert-title">Open Source Contributor</h3>
@@ -428,18 +536,61 @@
     </div>
   </section>
 
+  <!-- ===== FEEDBACK SECTION ===== -->
+  <section id="feedback">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">05 — Feedback</span>
+        <h2 class="section-title">Client Love</h2>
+      </div>
+      <div class="feedback-layout">
+        <div class="feedback-list reveal" id="feedbackList">
+          <!-- Feedbacks dynamically injected here -->
+        </div>
+        <div class="feedback-form-card reveal-right tech-card">
+          <h3>Leave a Review</h3>
+          <p>Worked with me recently? Your feedback is highly appreciated!</p>
+          <form id="feedbackForm" novalidate>
+            <div class="form-group">
+              <label for="fbName">Name / Company</label>
+              <input type="text" id="fbName" placeholder="John Doe @ TechCorp" required />
+            </div>
+            <div class="form-group">
+              <label for="fbRating">Rating (1-5)</label>
+              <div class="rating-input" id="ratingInput">
+                <i class="ri-star-fill active" data-val="1"></i>
+                <i class="ri-star-fill active" data-val="2"></i>
+                <i class="ri-star-fill active" data-val="3"></i>
+                <i class="ri-star-fill active" data-val="4"></i>
+                <i class="ri-star-fill active" data-val="5"></i>
+              </div>
+              <input type="hidden" id="fbRatingVal" value="5" required />
+            </div>
+            <div class="form-group">
+              <label for="fbMessage">Your Feedback</label>
+              <textarea id="fbMessage" rows="4" placeholder="How was your experience?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Submit Feedback <i
+                class="ri-message-3-line"></i></button>
+            <div class="form-success" id="fbSuccess">Thanks for your feedback!</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== CONTACT SECTION ===== -->
   <section id="contact">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">05 — Contact</span>
+        <span class="section-tag">06 — Contact</span>
         <h2 class="section-title">Let's Work Together</h2>
       </div>
-
       <div class="contact-grid">
         <div class="contact-info reveal">
           <p class="contact-intro">
-            Have a project in mind, a role to fill, or just want to talk tech? My inbox is always open. I'll get back to you within 24 hours.
+            Have a project in mind, a role to fill, or just want to talk tech? My inbox is always open. I'll get back to
+            you within 24 hours.
           </p>
           <ul class="contact-details">
             <li>
@@ -448,21 +599,24 @@
             </li>
             <li>
               <span class="contact-icon"><i class="ri-map-pin-line"></i></span>
-              <span>Colombo, Sri-Lanka (Remote OK)</span>
+              <span>Colombo, Sri Lanka (Remote OK)</span>
             </li>
             <li>
               <span class="contact-icon"><i class="ri-time-line"></i></span>
-              <span>Available: Mon–Fri, 9am–6pm PST</span>
+              <span>Available: Mon–Fri, 9am–6pm IST</span>
             </li>
           </ul>
           <div class="contact-socials">
             <a href="https://github.com/dhlakshitha-001" target="_blank"><i class="ri-github-fill"></i></a>
-            <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank"><i
+                class="ri-linkedin-fill"></i></a>
             <a href="https://twitter.com" target="_blank"><i class="ri-twitter-x-fill"></i></a>
           </div>
         </div>
 
-        <form class="contact-form reveal" id="contactForm" novalidate>
+        <form class="contact-form reveal tech-card" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+          <input type="hidden" name="subject" value="New Submission from Portfolio Site" />
           <div class="form-row">
             <div class="form-group">
               <label for="name">Your Name</label>
@@ -481,7 +635,8 @@
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, timeline, and budget..." required></textarea>
+            <textarea id="message" name="message" rows="5"
+              placeholder="Tell me about your project, timeline, and budget..." required></textarea>
             <span class="field-error" id="messageError"></span>
           </div>
           <button type="submit" class="btn btn-primary form-submit">
@@ -495,16 +650,64 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer id="footer">
-    <div class="container footer-inner">
-      <p class="footer-copy">© 2026 D H Lakshitha. Built with ❤️ and ☕</p>
-      <a href="#hero" class="footer-back">
-        Back to top <i class="ri-arrow-up-line"></i>
-      </a>
+  <!-- ===== ENTERPRISE FOOTER ===== -->
+  <footer id="footer" class="enterprise-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo">DHL<span class="accent">.</span></a>
+          <p class="footer-desc">Crafting scalable web applications and cloud-native solutions. Turning complex problems
+            into elegant, user-centred experiences.</p>
+          <div class="footer-socials">
+            <a href="https://github.com/dhlakshitha-001" target="_blank"><i class="ri-github-fill"></i></a>
+            <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank"><i
+                class="ri-linkedin-fill"></i></a>
+            <a href="mailto:dhlakshitha@outlook.com"><i class="ri-mail-fill"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Tech Stack</h4>
+          <ul>
+            <li><a href="#">React / Next.js</a></li>
+            <li><a href="#">Node.js / Express</a></li>
+            <li><a href="#">Azure Cloud</a></li>
+            <li><a href="#">DevOps / CI/CD</a></li>
+          </ul>
+        </div>
+        <div class="footer-subscribe">
+          <h4>Stay Updated</h4>
+          <p>Get the latest articles and project updates.</p>
+          <form class="subscribe-form" id="subscribeForm">
+            <input type="email" placeholder="Email address" required />
+            <button type="submit" aria-label="Subscribe"><i class="ri-arrow-right-line"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 D H Lakshitha. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <a href="#hero" class="footer-back">Back to top <i class="ri-arrow-up-line"></i></a>
+      </div>
     </div>
   </footer>
 
+  <!-- GLOBAL CURSOR AURA -->
+  <div id="cursor-aura"></div>
+
   <script src="script.js"></script>
 </body>
+
 </html>
