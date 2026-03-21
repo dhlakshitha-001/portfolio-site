@@ -1,0 +1,17 @@
+node_modules/
+
+# Runtime data
+db.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.*
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
