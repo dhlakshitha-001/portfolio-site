@@ -39,6 +39,7 @@
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#feedback" class="nav-link">Feedback</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
         <li><a href="#contact" class="nav-cta">Hire Me</a></li>
       </ul>
@@ -535,11 +536,54 @@
     </div>
   </section>
 
+  <!-- ===== FEEDBACK SECTION ===== -->
+  <section id="feedback">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">05 — Feedback</span>
+        <h2 class="section-title">Client Love</h2>
+      </div>
+      <div class="feedback-layout">
+        <div class="feedback-list reveal" id="feedbackList">
+          <!-- Feedbacks dynamically injected here -->
+        </div>
+        <div class="feedback-form-card reveal-right tech-card">
+          <h3>Leave a Review</h3>
+          <p>Worked with me recently? Your feedback is highly appreciated!</p>
+          <form id="feedbackForm" novalidate>
+            <div class="form-group">
+              <label for="fbName">Name / Company</label>
+              <input type="text" id="fbName" placeholder="John Doe @ TechCorp" required />
+            </div>
+            <div class="form-group">
+              <label for="fbRating">Rating (1-5)</label>
+              <div class="rating-input" id="ratingInput">
+                <i class="ri-star-fill active" data-val="1"></i>
+                <i class="ri-star-fill active" data-val="2"></i>
+                <i class="ri-star-fill active" data-val="3"></i>
+                <i class="ri-star-fill active" data-val="4"></i>
+                <i class="ri-star-fill active" data-val="5"></i>
+              </div>
+              <input type="hidden" id="fbRatingVal" value="5" required />
+            </div>
+            <div class="form-group">
+              <label for="fbMessage">Your Feedback</label>
+              <textarea id="fbMessage" rows="4" placeholder="How was your experience?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Submit Feedback <i
+                class="ri-message-3-line"></i></button>
+            <div class="form-success" id="fbSuccess">Thanks for your feedback!</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== CONTACT SECTION ===== -->
   <section id="contact">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">05 — Contact</span>
+        <span class="section-tag">06 — Contact</span>
         <h2 class="section-title">Let's Work Together</h2>
       </div>
       <div class="contact-grid">
@@ -570,7 +614,9 @@
           </div>
         </div>
 
-        <form class="contact-form reveal" id="contactForm" novalidate>
+        <form class="contact-form reveal tech-card" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+          <input type="hidden" name="subject" value="New Submission from Portfolio Site" />
           <div class="form-row">
             <div class="form-group">
               <label for="name">Your Name</label>
@@ -604,15 +650,62 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer id="footer">
-    <div class="container footer-inner">
-      <p class="footer-copy">&copy; 2025 D H Lakshitha. Built with &hearts; and &#9749;</p>
-      <a href="#hero" class="footer-back">
-        Back to top <i class="ri-arrow-up-line"></i>
-      </a>
+  <!-- ===== ENTERPRISE FOOTER ===== -->
+  <footer id="footer" class="enterprise-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo">DHL<span class="accent">.</span></a>
+          <p class="footer-desc">Crafting scalable web applications and cloud-native solutions. Turning complex problems
+            into elegant, user-centred experiences.</p>
+          <div class="footer-socials">
+            <a href="https://github.com/dhlakshitha-001" target="_blank"><i class="ri-github-fill"></i></a>
+            <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank"><i
+                class="ri-linkedin-fill"></i></a>
+            <a href="mailto:dhlakshitha@outlook.com"><i class="ri-mail-fill"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Tech Stack</h4>
+          <ul>
+            <li><a href="#">React / Next.js</a></li>
+            <li><a href="#">Node.js / Express</a></li>
+            <li><a href="#">Azure Cloud</a></li>
+            <li><a href="#">DevOps / CI/CD</a></li>
+          </ul>
+        </div>
+        <div class="footer-subscribe">
+          <h4>Stay Updated</h4>
+          <p>Get the latest articles and project updates.</p>
+          <form class="subscribe-form" id="subscribeForm">
+            <input type="email" placeholder="Email address" required />
+            <button type="submit" aria-label="Subscribe"><i class="ri-arrow-right-line"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 D H Lakshitha. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <a href="#hero" class="footer-back">Back to top <i class="ri-arrow-up-line"></i></a>
+      </div>
     </div>
   </footer>
+
+  <!-- GLOBAL CURSOR AURA -->
+  <div id="cursor-aura"></div>
 
   <script src="script.js"></script>
 </body>

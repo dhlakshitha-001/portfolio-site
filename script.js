@@ -99,7 +99,25 @@ function highlightNav() {
 }
 
 
-/* ─── 3.5. HERO PARALLAX & GLOW TRACKING ──────────────────────── */
+/* ─── 3.5. GLOBAL CURSOR AURA & TECH CARD SPOTLIGHT ───────────── */
+const cursorAura = document.getElementById('cursor-aura');
+const techCards = document.querySelectorAll('.tech-card, .project-card, .cert-card, .stat');
+
+document.addEventListener('mousemove', (e) => {
+  if (cursorAura) {
+    cursorAura.style.left = e.clientX + 'px';
+    cursorAura.style.top = e.clientY + 'px';
+  }
+  techCards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+  });
+});
+
+/* ─── HERO PARALLAX & GLOW TRACKING ──────────────────────── */
 const heroSection = document.getElementById('hero');
 if (heroSection) {
   let targetX = 0, targetY = 0;
@@ -170,6 +188,101 @@ const skillObserver = new IntersectionObserver((entries) => {
 skillFills.forEach(fill => skillObserver.observe(fill));
 
 
+/* ─── FEEDBACK SYSTEM ───────────────────────────────────────── */
+const feedbackForm = document.getElementById('feedbackForm');
+const feedbackList = document.getElementById('feedbackList');
+const ratingStars = document.querySelectorAll('#ratingInput i');
+const fbRatingVal = document.getElementById('fbRatingVal');
+
+if (ratingStars.length > 0) {
+  ratingStars.forEach(star => {
+    star.addEventListener('click', () => {
+      const val = parseInt(star.getAttribute('data-val'));
+      if (fbRatingVal) fbRatingVal.value = val;
+      ratingStars.forEach(s => {
+        if (parseInt(s.getAttribute('data-val')) <= val) s.classList.add('active');
+        else s.classList.remove('active');
+      });
+    });
+  });
+}
+
+const STORAGE_KEY = 'portfolio_feedback';
+function loadFeedback() {
+  if (!feedbackList) return;
+  const stored = localStorage.getItem(STORAGE_KEY);
+  let feedbacks = [];
+  if (stored) {
+    feedbacks = JSON.parse(stored);
+  } else {
+    feedbacks = [
+      { name: "Sarah J. @ TechStart", rating: 5, message: "Working with Lakshitha was a breeze. Highly professional and delivered ahead of schedule." },
+      { name: "Mike T. @ InnoWeb", rating: 5, message: "The UI/UX skills are out of this world. Our new dashboard is fast, responsive, and beautifully crafted." }
+    ];
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(feedbacks));
+  }
+
+    feedbackList.innerHTML = feedbacks.map(fb => `
+      <div class="feedback-card tech-card reveal">
+        <div class="stars">
+          ${Array.from({ length: 5 }).map((_, i) => `<i class="ri-star-fill" style="color: ${i < fb.rating ? '#fbbf24' : '#4b5563'}"></i>`).join('')}
+        </div>
+        <p>"${fb.message}"</p>
+        <div class="feedback-author">
+          <div class="avatar">${fb.name.charAt(0).toUpperCase()}</div>
+          <div class="info">
+            <strong>${fb.name.split('@')[0].trim()}</strong>
+            ${fb.name.includes('@') ? `<span>@ ${fb.name.split('@')[1].trim()}</span>` : ''}
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // Setup spotlight for new cards
+    const newCards = document.querySelectorAll('.feedback-card.tech-card');
+    document.addEventListener('mousemove', (e) => {
+      newCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+}
+loadFeedback();
+
+if (feedbackForm) {
+  feedbackForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('fbName').value.trim();
+    const message = document.getElementById('fbMessage').value.trim();
+    const rating = parseInt(fbRatingVal ? fbRatingVal.value : 5);
+
+    if (!name || !message) {
+      alert("Please fill out both Name and Message.");
+      return;
+    }
+
+    const feedbacks = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    feedbacks.unshift({ name, rating, message });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(feedbacks));
+
+    const fbSuccess = document.getElementById('fbSuccess');
+    if (fbSuccess) fbSuccess.classList.add('show');
+    feedbackForm.reset();
+
+    if (fbRatingVal) fbRatingVal.value = 5;
+    ratingStars.forEach(s => s.classList.add('active'));
+
+    loadFeedback();
+
+    setTimeout(() => {
+      if (fbSuccess) fbSuccess.classList.remove('show');
+    }, 4000);
+  });
+}
+
 /* ─── 6. CONTACT FORM VALIDATION ────────────────────────────── */
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
@@ -213,19 +326,33 @@ if (contactForm) {
 
     if (!valid) return;
 
-    // Simulate form submission (no backend)
     const submitBtn = contactForm.querySelector('.form-submit');
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="ri-loader-4-line" style="animation:spin 0.8s linear infinite"></i> Sending…';
 
-    setTimeout(() => {
-      // Reset
-      contactForm.reset();
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = 'Send Message <i class="ri-send-plane-line"></i>';
-      formSuccess.classList.add('show');
-      setTimeout(() => formSuccess.classList.remove('show'), 5000);
-    }, 1400);
+    const formData = new FormData(contactForm);
+    
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    })
+      .then(async (response) => {
+        if (response.status == 200) {
+          contactForm.reset();
+          formSuccess.classList.add('show');
+          setTimeout(() => formSuccess.classList.remove('show'), 5000);
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Something went wrong. Please try again.");
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send Message <i class="ri-send-plane-line"></i>';
+      });
   });
 
   // Live clear errors
@@ -243,15 +370,26 @@ if (contactForm) {
 }
 
 
-/* ─── 7. SPIN KEYFRAME (injected for loader icon) ───────────── */
+/* ─── 7. SUBSCRIPTION FORM ─────────────────────────────────── */
+const subscribeForm = document.getElementById('subscribeForm');
+if (subscribeForm) {
+  subscribeForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = subscribeForm.querySelector('button');
+    btn.innerHTML = '<i class="ri-check-line"></i>';
+    subscribeForm.querySelector('input').value = '';
+    setTimeout(() => btn.innerHTML = '<i class="ri-arrow-right-line"></i>', 3000);
+  });
+}
+
+/* ─── 8. SPIN KEYFRAME (injected for loader icon) ───────────── */
 (function injectSpinStyle() {
   const style = document.createElement('style');
   style.textContent = '@keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }';
   document.head.appendChild(style);
 })();
 
-
-/* ─── 8. MAIN SCROLL HANDLER (throttled) ───────────────────── */
+/* ─── 9. MAIN SCROLL HANDLER (throttled) ───────────────────── */
 let ticking = false;
 function onScroll() {
   if (!ticking) {
