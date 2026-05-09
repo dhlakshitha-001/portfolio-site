@@ -4,21 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>D H Lakshitha — Portfolio</title>
+  <title>D H Lakshitha - IT Support & Network Engineering Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
     rel="stylesheet" />
-  <!-- Remix Icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 
 <body>
 
-  <!-- ===== LOADING SCREEN ===== -->
   <div id="loader">
     <div class="loader-inner">
       <span class="loader-dot"></span>
@@ -27,10 +26,9 @@
     </div>
   </div>
 
-  <!-- ===== NAVBAR ===== -->
   <nav id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-logo">DHL<span class="accent">.</span></a>
+      <a href="#hero" class="nav-logo">DH<span class="accent">.</span></a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -38,36 +36,33 @@
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#achievements" class="nav-link">Achievements</a></li>
-        <li><a href="#feedback" class="nav-link">Feedback</a></li>
+        <li><a href="#achievements" class="nav-link">Experience</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
         <li><a href="#contact" class="nav-cta">Hire Me</a></li>
       </ul>
     </div>
   </nav>
-  <!-- Mobile nav dimmer overlay -->
   <div class="nav-overlay" id="navOverlay"></div>
 
-  <!-- ===== HERO SECTION ===== -->
   <section id="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
 
-    <!-- Left: text content -->
     <div class="hero-content">
-      <p class="hero-eyebrow reveal">👋 Hello, I'm</p>
+      <p class="hero-eyebrow reveal">Hello, I'm</p>
       <h1 class="hero-name reveal">D H<br /><span class="hero-name-accent">Lakshitha</span></h1>
       <div class="hero-title-row reveal">
-        <span class="hero-title-badge">Freelancer</span>
-        <span class="hero-title-sep">·</span>
-        <span class="hero-title-badge">Cloud Engineer</span>
-        <span class="hero-title-sep">·</span>
-        <span class="hero-title-badge">DevOps Enthusiast</span>
+        <span class="hero-title-badge">IT Support Specialist (L1)</span>
+        <span class="hero-title-sep">-</span>
+        <span class="hero-title-badge">Computer Systems & Network Engineering Undergraduate</span>
+        <span class="hero-title-sep">-</span>
+        <span class="hero-title-badge">Cloud, Linux & Cybersecurity Learner</span>
       </div>
       <p class="hero-desc reveal">
-        I craft scalable web applications and cloud-native solutions — turning complex problems into elegant,
-        user-centred experiences. Based in Sri Lanka, available worldwide.
+        I support day-to-day enterprise IT operations and build practical infrastructure, networking, and systems
+        projects. Based in Malabe, Sri Lanka, I am open to graduate, internship, and junior-level opportunities in IT
+        support, systems, networking, and cloud operations.
       </p>
       <div class="hero-actions reveal">
         <a href="#projects" class="btn btn-primary">
@@ -78,24 +73,21 @@
         </a>
       </div>
       <div class="hero-socials reveal">
-        <a href="https://github.com/dhlakshitha-001" target="_blank" aria-label="GitHub"><i
+        <a href="https://github.com/dhlakshitha-001" target="_blank" rel="noreferrer" aria-label="GitHub"><i
             class="ri-github-fill"></i></a>
-        <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank" aria-label="LinkedIn"><i
-            class="ri-linkedin-fill"></i></a>
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter/X"><i class="ri-twitter-x-fill"></i></a>
-        <a href="mailto:dhlakshitha@outlook.com" aria-label="Email"><i class="ri-mail-fill"></i></a>
+        <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank" rel="noreferrer"
+          aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        <a href="https://www.credly.com/users/d-h-lakshitha" target="_blank" rel="noreferrer"
+          aria-label="Credly"><i class="ri-medal-line"></i></a>
+        <a href="mailto:hlakshitha82@gmail.com" aria-label="Email"><i class="ri-mail-fill"></i></a>
       </div>
     </div>
 
-    <!-- Right: animated tech visual (replaces avatar) -->
     <div class="hero-visual reveal" aria-hidden="true">
-
-      <!-- SVG orbit rings + animated dots -->
       <svg class="orbit-svg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
         <circle class="orbit orbit-a" cx="240" cy="240" r="100" />
         <circle class="orbit orbit-b" cx="240" cy="240" r="160" />
         <circle class="orbit orbit-c" cx="240" cy="240" r="215" />
-        <!-- Dots travel along each orbit via animateMotion -->
         <circle class="orbit-dot" r="5" fill="#3b82f6">
           <animateMotion dur="6s" repeatCount="indefinite">
             <mpath href="#path-a" />
@@ -111,231 +103,182 @@
             <mpath href="#path-c" />
           </animateMotion>
         </circle>
-        <!-- Hidden paths for animateMotion -->
         <path id="path-a" d="M340,240 a100,100 0 1,1 -0.01,0" fill="none" />
         <path id="path-b" d="M400,240 a160,160 0 1,1 -0.01,0" fill="none" />
         <path id="path-c" d="M455,240 a215,215 0 1,1 -0.01,0" fill="none" />
       </svg>
 
-      <!-- Central glowing core -->
       <div class="hero-core">
         <div class="core-pulse"></div>
         <div class="core-pulse pulse-2"></div>
         <div class="core-inner">
-          <i class="ri-code-box-fill"></i>
+          <i class="ri-computer-fill"></i>
         </div>
       </div>
 
-      <!-- Floating tech orbs (orbit around core) -->
-      <div class="tech-orb orb-1"><i class="ri-cloud-line"></i><span>Azure</span></div>
-      <div class="tech-orb orb-2"><i class="ri-terminal-box-line"></i><span>DevOps</span></div>
-      <div class="tech-orb orb-3"><i class="ri-server-line"></i><span>Node.js</span></div>
-      <div class="tech-orb orb-4"><i class="ri-git-branch-line"></i><span>Git</span></div>
-      <div class="tech-orb orb-5"><i class="ri-docker-line"></i><span>Docker</span></div>
-      <div class="tech-orb orb-6"><i class="ri-code-s-slash-line"></i><span>React</span></div>
+      <div class="tech-orb orb-1"><i class="devicon-linux-plain colored"></i><span>Linux</span></div>
+      <div class="tech-orb orb-2"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+      <div class="tech-orb orb-3"><i class="devicon-azure-plain colored"></i><span>Azure</span></div>
+      <div class="tech-orb orb-4"><i class="ri-router-line"></i><span>Cisco</span></div>
+      <div class="tech-orb orb-5"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+      <div class="tech-orb orb-6"><i class="ri-shield-keyhole-line"></i><span>Security</span></div>
 
-      <!-- Horizontal scan line -->
       <div class="hero-scanline"></div>
 
-      <!-- Corner HUD brackets -->
       <span class="bracket br-tl"></span>
       <span class="bracket br-tr"></span>
       <span class="bracket br-bl"></span>
       <span class="bracket br-br"></span>
     </div>
 
-    <!-- Scroll indicator -->
     <a href="#about" class="scroll-indicator">
       <span class="scroll-label">Scroll</span>
       <span class="scroll-line"></span>
     </a>
   </section>
 
-  <!-- ===== ABOUT SECTION ===== -->
   <section id="about">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag"> About</span>
+        <span class="section-tag">01 - About</span>
         <h2 class="section-title">Who I Am</h2>
       </div>
 
-      <!-- about-grid: animated visual LEFT, text+stats RIGHT -->
       <div class="about-grid">
-
-        <!-- LEFT: animated tech visual -->
         <div class="about-visual reveal" aria-hidden="true">
           <canvas class="about-canvas" id="aboutCanvas"></canvas>
 
-          <!-- Floating code snippet cards -->
           <div class="code-card cc-1">
             <div class="cc-bar"><span class="cc-dot red"></span><span class="cc-dot yellow"></span><span
                 class="cc-dot green"></span></div>
-            <pre><code><em>const</em> deploy = <em>async</em> () =&gt; &#123;
-  <em>await</em> docker.build();
-  <em>await</em> azure.push();
-  <b>// live &#10003;</b>
-&#125;;</code></pre>
+            <pre><code><em>support</em> = [
+  "Windows / Linux / Mac",
+  "O365 / Azure portal",
+  "Networking / troubleshooting"
+]</code></pre>
           </div>
 
           <div class="code-card cc-2">
             <div class="cc-bar"><span class="cc-dot red"></span><span class="cc-dot yellow"></span><span
                 class="cc-dot green"></span></div>
-            <pre><code><b># CI pipeline</b>
-<em>build</em>:  &#10003; passed
-<em>test</em>:   &#10003; passed
-<em>deploy</em>: &#10003; live</code></pre>
+            <pre><code><b># current focus</b>
+cloud:   learning
+network: hands-on
+security: growing
+systems: active</code></pre>
           </div>
 
-          <!-- Badge pills -->
-          <div class="about-badge badge-1"><i class="ri-cloud-check-line"></i> AZ-900 Certified</div>
-          <div class="about-badge badge-2"><i class="ri-shield-check-line"></i> AZ-104 Certified</div>
-          <div class="about-badge badge-3"><i class="ri-git-commit-line"></i> 500+ Commits</div>
-          <div class="about-badge badge-4"><i class="ri-terminal-line"></i> DevOps Expert</div>
+          <div class="about-badge badge-1"><i class="ri-service-line"></i> IT Support Specialist (L1)</div>
+          <div class="about-badge badge-2"><i class="ri-graduation-cap-line"></i> Final Year at SLIIT</div>
+          <div class="about-badge badge-3"><i class="ri-router-line"></i> Cisco Learning Path</div>
+          <div class="about-badge badge-4"><i class="ri-shield-check-line"></i> Cybersecurity & Cloud Focus</div>
 
-          <!-- Ambient glow orbs -->
           <div class="about-glow-orb orb-a"></div>
           <div class="about-glow-orb orb-b"></div>
 
-          <!-- HUD corners -->
           <span class="bracket br-tl"></span>
           <span class="bracket br-tr"></span>
           <span class="bracket br-bl"></span>
           <span class="bracket br-br"></span>
         </div>
 
-        <!-- RIGHT: text + stats -->
         <div class="about-right">
           <div class="about-text reveal-right">
             <p>
-              I'm a <strong>Full-Stack Developer</strong> with 5+ years building production-grade web platforms, APIs,
-              and cloud infrastructure. I hold certifications from <strong>Microsoft (AZ-900)</strong> and <strong>Cisco
-                (CCNA)</strong>, and I'm passionate about DevOps culture and developer tooling.
+              I'm a final-year <strong>BSc (Hons) IT undergraduate in Computer Systems and Network Engineering</strong>
+              at SLIIT with current hands-on experience in enterprise IT support. My work has included on-site support,
+              troubleshooting, asset handling, user support, and daily operational coordination for MAS Capital.
             </p>
             <p>
-              When I'm not writing code, I'm contributing to open-source projects, mentoring junior developers, or
-              exploring the intersection of design and engineering. I believe the best software is both technically
-              sound <em>and</em> beautiful to use.
+              Alongside my support experience, I keep building practical projects in <strong>Linux
+                administration</strong>, <strong>network design</strong>, <strong>monitoring</strong>, <strong>IoT</strong>,
+              and <strong>cloud fundamentals</strong>. I enjoy learning by doing and documenting systems that are stable,
+              secure, and easy for teams to maintain.
             </p>
           </div>
           <div class="about-stats reveal-right">
             <div class="stat">
-              <span class="stat-num">1+</span>
-              <span class="stat-label">Years Experience</span>
+              <span class="stat-num">Final</span>
+              <span class="stat-label">Year Undergraduate</span>
             </div>
             <div class="stat">
-              <span class="stat-num">30+</span>
-              <span class="stat-label">Projects Shipped</span>
+              <span class="stat-num">2</span>
+              <span class="stat-label">IT Support Roles</span>
             </div>
             <div class="stat">
-              <span class="stat-num">10+</span>
-              <span class="stat-label">Happy Clients</span>
+              <span class="stat-num">8+</span>
+              <span class="stat-label">Certifications Completed</span>
             </div>
             <div class="stat">
-              <span class="stat-num">4</span>
-              <span class="stat-label">Certifications</span>
+              <span class="stat-num">7+</span>
+              <span class="stat-label">Academic & Lab Projects</span>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ===== SKILLS SECTION ===== -->
   <section id="skills">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">02 — Skills</span>
+        <span class="section-tag">02 - Skills</span>
         <h2 class="section-title">What I Work With</h2>
       </div>
       <div class="skills-categories">
-
-        <!-- Frontend -->
         <div class="skill-category reveal">
-          <h3 class="skill-cat-title"><i class="ri-computer-line"></i> Frontend</h3>
+          <h3 class="skill-cat-title"><i class="ri-computer-line"></i> Systems & Support</h3>
           <div class="skill-list">
             <div class="skill-item">
-              <div class="skill-info"><span>React / Next.js</span><span class="skill-pct">92%</span></div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-width="92"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>TypeScript</span><span class="skill-pct">88%</span></div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-width="88"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>CSS / Tailwind</span><span class="skill-pct">95%</span></div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-width="95"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Vue.js</span><span class="skill-pct">75%</span></div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-width="75"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Backend -->
-        <div class="skill-category reveal">
-          <h3 class="skill-cat-title"><i class="ri-server-line"></i> Backend</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info"><span>Node.js / Express</span><span class="skill-pct">90%</span></div>
+              <div class="skill-info"><span>Windows, Linux & MacOS Support</span><span class="skill-pct">90%</span></div>
               <div class="skill-bar">
                 <div class="skill-fill" data-width="90"></div>
               </div>
             </div>
             <div class="skill-item">
-              <div class="skill-info"><span>Python / FastAPI</span><span class="skill-pct">85%</span></div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-width="85"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>PostgreSQL / MongoDB</span><span class="skill-pct">82%</span></div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-width="82"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>GraphQL</span><span class="skill-pct">78%</span></div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-width="78"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cloud & DevOps -->
-        <div class="skill-category reveal">
-          <h3 class="skill-cat-title"><i class="ri-cloud-line"></i> Cloud & DevOps</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info"><span>Azure</span><span class="skill-pct">85%</span></div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-width="85"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Docker / Kubernetes</span><span class="skill-pct">80%</span></div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-width="80"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>CI/CD (GitHub Actions)</span><span class="skill-pct">88%</span></div>
+              <div class="skill-info"><span>IT Troubleshooting & Maintenance</span><span class="skill-pct">88%</span></div>
               <div class="skill-bar">
                 <div class="skill-fill" data-width="88"></div>
               </div>
             </div>
             <div class="skill-item">
-              <div class="skill-info"><span>Linux / Networking</span><span class="skill-pct">83%</span></div>
+              <div class="skill-info"><span>O365 & Azure Portal Administration</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Asset Management & User Support</span><span class="skill-pct">84%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="84"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="ri-router-line"></i> Networking & Security</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>Enterprise Networking Fundamentals</span><span class="skill-pct">86%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="86"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Network Monitoring & Basic Troubleshooting</span><span class="skill-pct">82%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="82"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Cybersecurity Concepts & Best Practices</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="78"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Cisco Devices, Packet Tracer & GNS3</span><span class="skill-pct">83%</span></div>
               <div class="skill-bar">
                 <div class="skill-fill" data-width="83"></div>
               </div>
@@ -343,44 +286,74 @@
           </div>
         </div>
 
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="ri-cloud-line"></i> Cloud, Tools & Scripting</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>Cloud Computing Concepts</span><span class="skill-pct">76%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="76"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Docker, Kubernetes & DevOps Fundamentals</span><span class="skill-pct">72%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="72"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Python & Scripting Basics</span><span class="skill-pct">74%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="74"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Documentation & Project Coordination</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Tech tag cloud -->
       <div class="tech-tags reveal">
-        <span class="tag">Git</span><span class="tag">AWS</span><span class="tag">Redis</span>
-        <span class="tag">Jest</span><span class="tag">Figma</span><span class="tag">Terraform</span>
-        <span class="tag">REST APIs</span><span class="tag">WebSockets</span><span class="tag">Nginx</span>
-        <span class="tag">Prisma</span><span class="tag">Vercel</span><span class="tag">Supabase</span>
+        <span class="tag">Azure Portal</span><span class="tag">Microsoft O365</span><span class="tag">Cisco</span>
+        <span class="tag">Wireshark</span><span class="tag">GNS3</span><span class="tag">Cisco Packet Tracer</span>
+        <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Nagios</span>
+        <span class="tag">Zabbix</span><span class="tag">VMware Workstation</span><span class="tag">VirtualBox</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROJECTS SECTION ===== -->
   <section id="projects">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">03 — Projects</span>
+        <span class="section-tag">03 - Projects</span>
         <h2 class="section-title">Selected Work</h2>
       </div>
       <div class="projects-grid">
-
         <article class="project-card reveal">
           <div class="project-img">
             <div class="project-img-placeholder" style="--hue:220">
-              <i class="ri-shopping-bag-line"></i>
+              <i class="ri-server-line"></i>
             </div>
             <div class="project-links">
-              <a href="#" aria-label="Live demo" class="project-link"><i class="ri-external-link-line"></i></a>
-              <a href="#" aria-label="GitHub repo" class="project-link"><i class="ri-github-fill"></i></a>
+              <a href="assets/D H Lakshitha.pdf" aria-label="View CV" class="project-link"><i
+                  class="ri-file-list-3-line"></i></a>
+              <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank" rel="noreferrer"
+                aria-label="LinkedIn profile" class="project-link"><i class="ri-linkedin-fill"></i></a>
             </div>
           </div>
           <div class="project-body">
             <span class="project-num">01</span>
-            <h3 class="project-title">ShopFlow — E-commerce Platform</h3>
-            <p class="project-desc">A high-performance multi-vendor marketplace with real-time inventory, Stripe
-              payments, and a custom recommendation engine. Handles 10k+ concurrent users.</p>
+            <h3 class="project-title">Linux Domain Controller with Zabbix Monitoring</h3>
+            <p class="project-desc">
+              Built a Linux-based Active Directory compatible domain controller using Samba and Kerberos, then added
+              Zabbix for real-time system and network monitoring.
+            </p>
             <div class="project-stack">
-              <span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>Redis</span><span>Stripe</span>
+              <span>Linux</span><span>Samba</span><span>Kerberos</span><span>Zabbix</span><span>Monitoring</span>
             </div>
           </div>
         </article>
@@ -388,20 +361,24 @@
         <article class="project-card reveal">
           <div class="project-img">
             <div class="project-img-placeholder" style="--hue:150">
-              <i class="ri-bar-chart-box-line"></i>
+              <i class="ri-wifi-line"></i>
             </div>
             <div class="project-links">
-              <a href="#" aria-label="Live demo" class="project-link"><i class="ri-external-link-line"></i></a>
-              <a href="#" aria-label="GitHub repo" class="project-link"><i class="ri-github-fill"></i></a>
+              <a href="assets/D H Lakshitha.pdf" aria-label="View CV" class="project-link"><i
+                  class="ri-file-list-3-line"></i></a>
+              <a href="http://www.sliit.lk/" target="_blank" rel="noreferrer" aria-label="SLIIT"
+                class="project-link"><i class="ri-external-link-line"></i></a>
             </div>
           </div>
           <div class="project-body">
             <span class="project-num">02</span>
-            <h3 class="project-title">DataPulse — Analytics Dashboard</h3>
-            <p class="project-desc">Interactive business intelligence dashboard with real-time WebSocket feeds, D3.js
-              visualisations, and role-based access control for enterprise teams.</p>
+            <h3 class="project-title">Scalable Wireless Network Design for a University Campus</h3>
+            <p class="project-desc">
+              Produced a full technical network design covering high-density wireless access, IoT integration, BYOD,
+              security planning, cost analysis, scheduling, and future scalability.
+            </p>
             <div class="project-stack">
-              <span>React</span><span>FastAPI</span><span>D3.js</span><span>WebSockets</span><span>Azure</span>
+              <span>Wireless Design</span><span>Network Architecture</span><span>Security Planning</span><span>BYOD</span><span>Documentation</span>
             </div>
           </div>
         </article>
@@ -409,20 +386,24 @@
         <article class="project-card reveal">
           <div class="project-img">
             <div class="project-img-placeholder" style="--hue:280">
-              <i class="ri-robot-2-line"></i>
+              <i class="ri-radar-line"></i>
             </div>
             <div class="project-links">
-              <a href="#" aria-label="Live demo" class="project-link"><i class="ri-external-link-line"></i></a>
-              <a href="#" aria-label="GitHub repo" class="project-link"><i class="ri-github-fill"></i></a>
+              <a href="assets/D H Lakshitha.pdf" aria-label="View CV" class="project-link"><i
+                  class="ri-file-list-3-line"></i></a>
+              <a href="https://www.credly.com/users/d-h-lakshitha" target="_blank" rel="noreferrer"
+                aria-label="Credly profile" class="project-link"><i class="ri-medal-line"></i></a>
             </div>
           </div>
           <div class="project-body">
             <span class="project-num">03</span>
-            <h3 class="project-title">AskDocs — AI Document Assistant</h3>
-            <p class="project-desc">RAG-powered document Q&A tool that lets teams chat with their internal knowledge
-              base. Integrates OpenAI + Pinecone with a beautiful chat interface.</p>
+            <h3 class="project-title">Nagios Monitoring and DNS Caching Lab</h3>
+            <p class="project-desc">
+              Configured Nagios Core on CentOS to monitor Fedora clients and implemented DNS caching to improve
+              resolution speed while validating host and service availability.
+            </p>
             <div class="project-stack">
-              <span>TypeScript</span><span>OpenAI</span><span>Pinecone</span><span>Next.js</span><span>Tailwind</span>
+              <span>CentOS</span><span>Fedora</span><span>Nagios</span><span>DNS Caching</span><span>Troubleshooting</span>
             </div>
           </div>
         </article>
@@ -430,193 +411,162 @@
         <article class="project-card reveal">
           <div class="project-img">
             <div class="project-img-placeholder" style="--hue:40">
-              <i class="ri-shield-check-line"></i>
+              <i class="ri-car-line"></i>
             </div>
             <div class="project-links">
-              <a href="#" aria-label="Live demo" class="project-link"><i class="ri-external-link-line"></i></a>
-              <a href="#" aria-label="GitHub repo" class="project-link"><i class="ri-github-fill"></i></a>
+              <a href="assets/D H Lakshitha.pdf" aria-label="View CV" class="project-link"><i
+                  class="ri-file-list-3-line"></i></a>
+              <a href="https://github.com/dhlakshitha-001" target="_blank" rel="noreferrer" aria-label="GitHub profile"
+                class="project-link"><i class="ri-github-fill"></i></a>
             </div>
           </div>
           <div class="project-body">
             <span class="project-num">04</span>
-            <h3 class="project-title">VaultOps — Secrets Manager CLI</h3>
-            <p class="project-desc">Open-source CLI tool for managing environment secrets across dev/staging/prod.
-              Supports Azure Key Vault and AWS Secrets Manager. 1.2k GitHub stars.</p>
+            <h3 class="project-title">Automated Automobile Safety System with IoT</h3>
+            <p class="project-desc">
+              Contributed to a group IoT solution designed to monitor driver attention, respond to changing conditions,
+              improve visibility, and support predictive braking for safer driving.
+            </p>
             <div class="project-stack">
-              <span>Python</span><span>Azure Key Vault</span><span>AWS</span><span>Click</span><span>Docker</span>
+              <span>IoT</span><span>Embedded Concepts</span><span>Safety Systems</span><span>Sensors</span><span>Team Project</span>
             </div>
           </div>
         </article>
-
       </div>
       <div class="projects-more reveal">
-        <a href="https://github.com/dhlakshitha-001" target="_blank" class="btn btn-ghost">
+        <a href="https://github.com/dhlakshitha-001" target="_blank" rel="noreferrer" class="btn btn-ghost">
           <i class="ri-github-fill"></i> See More on GitHub
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== ACHIEVEMENTS / CERTIFICATIONS ===== -->
   <section id="achievements">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">04 — Achievements</span>
-        <h2 class="section-title">Certifications &amp; Awards</h2>
+        <span class="section-tag">04 - Experience</span>
+        <h2 class="section-title">Experience, Education & Credentials</h2>
       </div>
       <div class="certs-grid">
-
         <div class="cert-card reveal">
-          <div class="cert-icon" style="--cert-color:#0078d4"><i class="ri-microsoft-fill"></i></div>
+          <div class="cert-icon" style="--cert-color:#0078d4"><i class="ri-briefcase-4-line"></i></div>
           <div class="cert-body">
-            <span class="cert-issuer">Microsoft</span>
-            <h3 class="cert-title">Azure Fundamentals</h3>
-            <span class="cert-code">AZ-900</span>
-            <p class="cert-date"><i class="ri-calendar-line"></i> Issued Jan 2024</p>
-            <a href="#" class="cert-verify">Verify <i class="ri-external-link-line"></i></a>
+            <span class="cert-issuer">Current Role</span>
+            <h3 class="cert-title">IT Support Specialist (L1)</h3>
+            <span class="cert-code">MAS Capital</span>
+            <p class="cert-date"><i class="ri-map-pin-line"></i> On-site enterprise IT support and operational coordination</p>
+            <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank" rel="noreferrer"
+              class="cert-verify">Profile <i class="ri-external-link-line"></i></a>
           </div>
         </div>
 
         <div class="cert-card reveal">
-          <div class="cert-icon" style="--cert-color:#1ba0d7"><i class="ri-router-line"></i></div>
+          <div class="cert-icon" style="--cert-color:#1ba0d7"><i class="ri-service-line"></i></div>
+          <div class="cert-body">
+            <span class="cert-issuer">Previous Role</span>
+            <h3 class="cert-title">IT Support Associate (L0)</h3>
+            <span class="cert-code">MAS Capital</span>
+            <p class="cert-date"><i class="ri-tools-line"></i> User support, issue handling, and systems assistance</p>
+            <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank" rel="noreferrer"
+              class="cert-verify">Profile <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon" style="--cert-color:#ff9900"><i class="ri-graduation-cap-line"></i></div>
+          <div class="cert-body">
+            <span class="cert-issuer">Education</span>
+            <h3 class="cert-title">BSc (Hons) IT - Computer Systems & Network Engineering</h3>
+            <span class="cert-code">SLIIT</span>
+            <p class="cert-date"><i class="ri-calendar-line"></i> Final year undergraduate</p>
+            <a href="http://www.sliit.lk/" target="_blank" rel="noreferrer" class="cert-verify">Institution <i
+                  class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon" style="--cert-color:#6f42c1"><i class="ri-router-line"></i></div>
           <div class="cert-body">
             <span class="cert-issuer">Cisco</span>
-            <h3 class="cert-title">Networking Fundamentals</h3>
-            <span class="cert-code">CCNA</span>
-            <p class="cert-date"><i class="ri-calendar-line"></i> Issued Mar 2023</p>
-            <a href="#" class="cert-verify">Verify <i class="ri-external-link-line"></i></a>
-          </div>
-        </div>
-
-        <div class="cert-card reveal">
-          <div class="cert-icon" style="--cert-color:#ff9900"><i class="ri-amazon-fill"></i></div>
-          <div class="cert-body">
-            <span class="cert-issuer">Amazon Web Services</span>
-            <h3 class="cert-title">AWS Cloud Practitioner</h3>
-            <span class="cert-code">CLF-C02</span>
-            <p class="cert-date"><i class="ri-calendar-line"></i> Issued Aug 2023</p>
-            <a href="#" class="cert-verify">Verify <i class="ri-external-link-line"></i></a>
-          </div>
-        </div>
-
-        <div class="cert-card reveal">
-          <div class="cert-icon" style="--cert-color:#6f42c1"><i class="ri-code-box-line"></i></div>
-          <div class="cert-body">
-            <span class="cert-issuer">freeCodeCamp</span>
-            <h3 class="cert-title">Full Stack Development</h3>
-            <span class="cert-code">FCC-FSD</span>
-            <p class="cert-date"><i class="ri-calendar-line"></i> Issued Jun 2022</p>
-            <a href="#" class="cert-verify">Verify <i class="ri-external-link-line"></i></a>
+            <h3 class="cert-title">Network Technician Career Path and CCNA Foundations</h3>
+            <span class="cert-code">Cisco Learning</span>
+            <p class="cert-date"><i class="ri-award-line"></i> Networking Basics, Packet Tracer, hardware, cybersecurity</p>
+            <a href="https://www.credly.com/users/d-h-lakshitha" target="_blank" rel="noreferrer"
+              class="cert-verify">Credly <i class="ri-external-link-line"></i></a>
           </div>
         </div>
 
         <div class="cert-card award-card reveal">
-          <div class="cert-icon" style="--cert-color:#f59e0b"><i class="ri-trophy-line"></i></div>
+          <div class="cert-icon" style="--cert-color:#f59e0b"><i class="ri-team-line"></i></div>
           <div class="cert-body">
-            <span class="cert-issuer">HackSF 2023</span>
-            <h3 class="cert-title">1st Place — Best Dev Tool</h3>
-            <span class="cert-code">AWARD</span>
-            <p class="cert-date"><i class="ri-calendar-line"></i> October 2023</p>
-            <a href="#" class="cert-verify">Details <i class="ri-external-link-line"></i></a>
+            <span class="cert-issuer">Leadership</span>
+            <h3 class="cert-title">IEEE Student Community Involvement</h3>
+            <span class="cert-code">Service</span>
+            <p class="cert-date"><i class="ri-calendar-line"></i> Secretary, Assistant Treasurer, and committee chair roles</p>
+            <a href="https://r10.ieee.org/srilanka-cs/" target="_blank" rel="noreferrer" class="cert-verify">IEEE <i
+                  class="ri-external-link-line"></i></a>
           </div>
         </div>
 
         <div class="cert-card award-card reveal">
-          <div class="cert-icon" style="--cert-color:#10b981"><i class="ri-open-source-fill"></i></div>
+          <div class="cert-icon" style="--cert-color:#10b981"><i class="ri-shield-star-line"></i></div>
           <div class="cert-body">
-            <span class="cert-issuer">GitHub</span>
-            <h3 class="cert-title">Open Source Contributor</h3>
-            <span class="cert-code">1.2k ⭐</span>
-            <p class="cert-date"><i class="ri-calendar-line"></i> 2022 – Present</p>
-            <a href="#" class="cert-verify">View <i class="ri-external-link-line"></i></a>
+            <span class="cert-issuer">Additional Certifications</span>
+            <h3 class="cert-title">Fortinet, KodeKloud, Python & Linux Learning</h3>
+            <span class="cert-code">Continuous Learning</span>
+            <p class="cert-date"><i class="ri-book-open-line"></i> Docker Level 1, cybersecurity fundamentals, Python and Linux basics</p>
+            <a href="https://www.credly.com/users/d-h-lakshitha" target="_blank" rel="noreferrer"
+              class="cert-verify">View Credentials <i class="ri-external-link-line"></i></a>
           </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FEEDBACK SECTION ===== -->
-  <section id="feedback">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">05 — Feedback</span>
-        <h2 class="section-title">Client Love</h2>
-      </div>
-      <div class="feedback-layout">
-        <div class="feedback-list reveal" id="feedbackList">
-          <!-- Feedbacks dynamically injected here -->
-        </div>
-        <div class="feedback-form-card reveal-right tech-card">
-          <h3>Leave a Review</h3>
-          <p>Worked with me recently? Your feedback is highly appreciated!</p>
-          <form id="feedbackForm" novalidate>
-            <div class="form-group">
-              <label for="fbName">Name / Company</label>
-              <input type="text" id="fbName" placeholder="John Doe @ TechCorp" required />
-            </div>
-            <div class="form-group">
-              <label for="fbRating">Rating (1-5)</label>
-              <div class="rating-input" id="ratingInput">
-                <i class="ri-star-fill active" data-val="1"></i>
-                <i class="ri-star-fill active" data-val="2"></i>
-                <i class="ri-star-fill active" data-val="3"></i>
-                <i class="ri-star-fill active" data-val="4"></i>
-                <i class="ri-star-fill active" data-val="5"></i>
-              </div>
-              <input type="hidden" id="fbRatingVal" value="5" required />
-            </div>
-            <div class="form-group">
-              <label for="fbMessage">Your Feedback</label>
-              <textarea id="fbMessage" rows="4" placeholder="How was your experience?" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary form-submit">Submit Feedback <i
-                class="ri-message-3-line"></i></button>
-            <div class="form-success" id="fbSuccess">Thanks for your feedback!</div>
-          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT SECTION ===== -->
   <section id="contact">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">06 — Contact</span>
+        <span class="section-tag">05 - Contact</span>
         <h2 class="section-title">Let's Work Together</h2>
       </div>
       <div class="contact-grid">
         <div class="contact-info reveal">
           <p class="contact-intro">
-            Have a project in mind, a role to fill, or just want to talk tech? My inbox is always open. I'll get back to
-            you within 24 hours.
+            If you are hiring for IT support, systems administration, networking, NOC, or cloud-focused entry roles, I
+            would love to connect. I'm also happy to discuss academic collaborations and technical projects.
           </p>
           <ul class="contact-details">
             <li>
               <span class="contact-icon"><i class="ri-mail-line"></i></span>
-              <a href="mailto:dhlakshitha@outlook.com">dhlakshitha@outlook.com</a>
+              <a href="mailto:hlakshitha82@gmail.com">hlakshitha82@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="ri-phone-line"></i></span>
+              <a href="tel:+94712705606">071 270 5606</a>
             </li>
             <li>
               <span class="contact-icon"><i class="ri-map-pin-line"></i></span>
-              <span>Colombo, Sri Lanka (Remote OK)</span>
+              <span>Malabe, Sri Lanka</span>
             </li>
             <li>
               <span class="contact-icon"><i class="ri-time-line"></i></span>
-              <span>Available: Mon–Fri, 9am–6pm IST</span>
+              <span>Available for internships, graduate roles, and support opportunities</span>
             </li>
           </ul>
           <div class="contact-socials">
-            <a href="https://github.com/dhlakshitha-001" target="_blank"><i class="ri-github-fill"></i></a>
-            <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank"><i
+            <a href="https://github.com/dhlakshitha-001" target="_blank" rel="noreferrer"><i
+                class="ri-github-fill"></i></a>
+            <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank" rel="noreferrer"><i
                 class="ri-linkedin-fill"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="ri-twitter-x-fill"></i></a>
+            <a href="https://www.credly.com/users/d-h-lakshitha" target="_blank" rel="noreferrer"><i
+                class="ri-medal-line"></i></a>
           </div>
         </div>
 
-        <form class="contact-form reveal tech-card" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <form class="contact-form reveal tech-card" id="contactForm" action="https://api.web3forms.com/submit" method="POST"
+          novalidate>
           <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
-          <input type="hidden" name="subject" value="New Submission from Portfolio Site" />
+          <input type="hidden" name="subject" value="New Submission from D H Lakshitha Portfolio" />
           <div class="form-row">
             <div class="form-group">
               <label for="name">Your Name</label>
@@ -631,12 +581,12 @@
           </div>
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Project inquiry / Freelance / etc." />
+            <input type="text" id="subject" name="subject" placeholder="Job opportunity / Collaboration / Technical discussion" />
           </div>
           <div class="form-group">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5"
-              placeholder="Tell me about your project, timeline, and budget..." required></textarea>
+              placeholder="Tell me about the role, project, or support requirement..." required></textarea>
             <span class="field-error" id="messageError"></span>
           </div>
           <button type="submit" class="btn btn-primary form-submit">
@@ -650,19 +600,21 @@
     </div>
   </section>
 
-  <!-- ===== ENTERPRISE FOOTER ===== -->
   <footer id="footer" class="enterprise-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#hero" class="footer-logo">DHL<span class="accent">.</span></a>
-          <p class="footer-desc">Crafting scalable web applications and cloud-native solutions. Turning complex problems
-            into elegant, user-centred experiences.</p>
+          <p class="footer-desc">
+            Building a career across IT support, networking, Linux systems, and cloud operations through hands-on work,
+            lab projects, and continuous learning.
+          </p>
           <div class="footer-socials">
-            <a href="https://github.com/dhlakshitha-001" target="_blank"><i class="ri-github-fill"></i></a>
-            <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank"><i
+            <a href="https://github.com/dhlakshitha-001" target="_blank" rel="noreferrer"><i
+                class="ri-github-fill"></i></a>
+            <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank" rel="noreferrer"><i
                 class="ri-linkedin-fill"></i></a>
-            <a href="mailto:dhlakshitha@outlook.com"><i class="ri-mail-fill"></i></a>
+            <a href="mailto:hlakshitha82@gmail.com"><i class="ri-mail-fill"></i></a>
           </div>
         </div>
         <div class="footer-links-col">
@@ -671,40 +623,42 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#feedback">Feedback</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-links-col">
-          <h4>Tech Stack</h4>
+          <h4>Focus Areas</h4>
           <ul>
-            <li><a href="#">React / Next.js</a></li>
-            <li><a href="#">Node.js / Express</a></li>
-            <li><a href="#">Azure Cloud</a></li>
-            <li><a href="#">DevOps / CI/CD</a></li>
+            <li><a href="#skills">IT Support</a></li>
+            <li><a href="#skills">Networking</a></li>
+            <li><a href="#skills">Linux Systems</a></li>
+            <li><a href="#skills">Cloud Fundamentals</a></li>
           </ul>
         </div>
         <div class="footer-subscribe">
-          <h4>Stay Updated</h4>
-          <p>Get the latest articles and project updates.</p>
-          <form class="subscribe-form" id="subscribeForm">
-            <input type="email" placeholder="Email address" required />
-            <button type="submit" aria-label="Subscribe"><i class="ri-arrow-right-line"></i></button>
-          </form>
+          <h4>Profiles</h4>
+          <p>Explore my public work, credentials, and professional updates.</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank" rel="noreferrer"
+              aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://www.credly.com/users/d-h-lakshitha" target="_blank" rel="noreferrer"
+              aria-label="Credly"><i class="ri-medal-line"></i></a>
+            <a href="https://github.com/dhlakshitha-001" target="_blank" rel="noreferrer" aria-label="GitHub"><i
+                class="ri-github-fill"></i></a>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2025 D H Lakshitha. All rights reserved.</p>
+        <p class="footer-copy">&copy; 2026 D H Lakshitha. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="https://www.linkedin.com/in/d-h-lakshitha-68961826a" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://www.credly.com/users/d-h-lakshitha" target="_blank" rel="noreferrer">Credly</a>
         </div>
         <a href="#hero" class="footer-back">Back to top <i class="ri-arrow-up-line"></i></a>
       </div>
     </div>
   </footer>
 
-  <!-- GLOBAL CURSOR AURA -->
   <div id="cursor-aura"></div>
 
   <script src="script.js"></script>
